@@ -30,4 +30,4 @@ Contributions to the anonymous chat room application are always welcome! If you'
 
 ## Demo
 
-![connected status](https://raw.githubusercontent.com/WR104/chat_room/main/Demo/connected.JPG)
+![connected status](https://raw.githubusercontent.com/WR104/chat_room/main/Demo/connected.png)
