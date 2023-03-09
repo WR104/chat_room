@@ -7,7 +7,8 @@ This is an anonymous chat room application built using Rust with Tokio on the se
 - Anonymous chat: users can chat with each other without revealing their identity, no need to sign in
 - Multiple users: multiple users can join the chat room and chat with each other simultaneously
 - Real-time messaging: messages are delivered instantly and in real-time to all users in the chat room
-
+- Notifications: Every user can see who joins, leaves or stays in the room.
+- Chat History: Every new user sees the previous chat history
 ## How to Use
 
 To use the anonymous chat room, follow these steps:
@@ -26,3 +27,7 @@ cargo run
 Thanks to wuaoxiang for his help on rust
 
 Contributions to the anonymous chat room application are always welcome! If you're interested in contributing, please fork the repository and submit a pull request with your changes.
+
+## Demo
+
+![connected status](https://raw.githubusercontent.com/WR104/chat_room/main/Demo/connected.JPG)
