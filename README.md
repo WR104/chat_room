@@ -24,7 +24,7 @@ cargo run
 
 ## Contributing
 
-Thanks to wuaoxiang for his help on rust
+Thanks the contribution by wuaoxiang
 
 Contributions to the anonymous chat room application are always welcome! If you're interested in contributing, please fork the repository and submit a pull request with your changes.
 
