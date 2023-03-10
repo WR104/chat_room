@@ -21,18 +21,17 @@ function connect() {
         addChatMessage(userId, message)
 
         //new client joined in the room
-        if (ev.data.includes("user_id:")) {
-            if (ev.data.includes("joined")) {
-                clients.push(userId);
-            }
-            if (ev.data.includes("left")) {
-                const remove_index = clients.indexOf(userId);
-                if (remove_index > -1) {
-                    clients.splice(remove_index, 1);
-                }
-            }
-            updateClientList(clients);
+        if (message == "joined in the room") {
+            clients.push(userId);
         }
+        //leave the room
+        if (message == "left the room") {
+            const remove_index = clients.indexOf(userId);
+            if (remove_index > -1) {
+                clients.splice(remove_index, 1);
+            }
+        }
+        updateClientList(clients);
     }
 
     socket.onclose = () => {
@@ -45,7 +44,6 @@ function disconnect() {
     if (socket) {
         socket.close()
         socket = null
-
         updateConnectionStatus()
     }
 }
@@ -78,6 +76,7 @@ function updateClientList(clients) {
         title.textContent = "Members:"
     }
 }
+
 // Example usage: updateClientList(["User 1", "User 2", "User 3"]);
 
 
@@ -124,8 +123,7 @@ chatForm.addEventListener("submit", (event) => {
     chatInput.value = "";
 
     const text = message
-    updateClientList("User", message)
-    //logStatus('Sending: ' + text)
+    if (message != "joined in the room" && message != "left the room")
     socket.send(text)
 
     textInput.value = ''
@@ -133,6 +131,6 @@ chatForm.addEventListener("submit", (event) => {
 });
 
 //connect the server after enter the chat room
-socket?disconnect():connect()
+socket ? disconnect() : connect()
 
 updateConnectionStatus()
